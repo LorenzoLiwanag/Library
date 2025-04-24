@@ -9,7 +9,7 @@ const addBookBtn = document.getElementById("addBook");
 
 const myLibrary = [];
 
-function Book (title, author, numOfPages) {
+function Book(title, author, numOfPages) {
     this.title = title;
     this.author = author;
     this.numOfPages = numOfPages;
@@ -21,9 +21,14 @@ showDialogBtn.addEventListener("click", () => {
 })
 
 
-const addBook= () => {
+const createNewBookObject = () => {
     const title = bookTitle.value;
     const author = bookAuthor.value;
     const numOfPages = bookPageCount.value;
+    const testBook = new Book(title, author, numOfPages);
+    console.log(testBook);
+    // myLibrary.push(testBook);
 }
+
+addBookBtn.addEventListener("click", createNewBookObject);
 
