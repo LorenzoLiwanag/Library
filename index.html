@@ -9,22 +9,22 @@
 
 <body>
     <h1>Library</h1>
-    <button id = "addBookBtn">Add Book</button>
+    <button id = "showDialogBtn">Add Book</button>
 
     <dialog id="addBookDialog">
         <form method="dialog">
             <label>Title</label>
-            <input type="text">
+            <input type="text" id="bookTitle">
             <label>Author</label>
-            <input type="text">
+            <input type="text" id ="bookAuthor">
             <label># of Pages</label>
-            <input type="text">
+            <input type="text" id="bookPageCount">
             <label>Read?</label>
             <label>Yes</label>
-            <input type="checkbox">
+            <input type="checkbox" id="hasBeenRead">
             <label>no</label>
-            <input type="checkbox">
-            <button>submit!</button>
+            <input type="checkbox" id="hasNotBeenRead">
+            <button id="addBook">Submit!</button>
         </form>
     </dialog>
     <script src = "index.js"></script>
