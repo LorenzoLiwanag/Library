@@ -7,6 +7,9 @@ const bookPageCount = document.getElementById("bookPageCount");
 // const hasNotBeenRead = document.getElementById("hasNotBeenRead");
 const addBookBtn = document.getElementById("addBook");
 
+const library = document.querySelector("#library");
+
+
 const myLibrary = [];
 
 function Book(title, author, numOfPages) {
@@ -22,13 +25,31 @@ showDialogBtn.addEventListener("click", () => {
 
 
 const createNewBookObject = () => {
-    const title = bookTitle.value;
-    const author = bookAuthor.value;
-    const numOfPages = bookPageCount.value;
+    const title = document.createElement("p");
+    title.classList.add("titles");
+    title.textContent = bookTitle.value;
+
+    const author = document.createElement("p");
+    author.classList.add("authors");
+    author.textContent = bookAuthor.value;
+
+    const numOfPages = document.createElement("p");
+    numOfPages.classList.add("numOfPages");
+    numOfPages.textContent = bookPageCount.value;
+
     const testBook = new Book(title, author, numOfPages);
-    console.log(testBook);
-    // myLibrary.push(testBook);
+
+    
+
+    if (title==="" || author === "" || bookPageCount === "") {
+        alert("error please fill out all fields");
+    }else {
+        library.appendChild(testBook.title);
+        library.appendChild(testBook.author);
+        library.appendChild(testBook.numOfPages);
+    }
+
+    
 }
 
 addBookBtn.addEventListener("click", createNewBookObject);
-
