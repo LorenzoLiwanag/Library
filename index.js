@@ -48,7 +48,7 @@ const createNewBookObject = () => {
         library.appendChild(testBook.author);
         library.appendChild(testBook.numOfPages);
     }
-
+    
     
 }
 
