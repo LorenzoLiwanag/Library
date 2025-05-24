@@ -19,37 +19,3 @@ function Book(title, author, numOfPages, read) {
     this.read = read;
 }
 
-showDialogBtn.addEventListener("click", () => {
-    addBookDialog.showModal();
-})
-
-
-const createNewBookObject = () => {
-    const title = document.createElement("p");
-    title.classList.add("titles");
-    title.textContent = bookTitle.value;
-
-    const author = document.createElement("p");
-    author.classList.add("authors");
-    author.textContent = bookAuthor.value;
-
-    const numOfPages = document.createElement("p");
-    numOfPages.classList.add("numOfPages");
-    numOfPages.textContent = bookPageCount.value;
-
-    const testBook = new Book(title, author, numOfPages);
-
-    
-
-    if (title==="" || author === "" || bookPageCount === "") {
-        alert("error please fill out all fields");
-    }else {
-        library.appendChild(testBook.title);
-        library.appendChild(testBook.author);
-        library.appendChild(testBook.numOfPages);
-    }
-    
-    
-}
-
-addBookBtn.addEventListener("click", createNewBookObject);
