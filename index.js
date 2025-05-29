@@ -12,10 +12,28 @@ const library = document.querySelector("#library");
 
 const myLibrary = [];
 
-function Book(title, author, numOfPages, read) {
+function Book(title, author, numOfPages,) {
     this.title = title;
     this.author = author;
     this.numOfPages = numOfPages;
-    this.read = read;
+    // this.read = read;
 }
 
+
+showDialogBtn.addEventListener("click", () => {
+    addBookDialog.showModal();
+})
+
+addBookBtn.addEventListener("click", () => {
+    const newBook = new Book;
+
+    newBook.title = bookTitle.value;
+    newBook.author = bookAuthor.value;
+    newBook.numOfPages = bookPageCount.value;
+
+    myLibrary.push(newBook);
+
+    for (let i = 0; i < myLibrary.length; i++) {
+        console.log(myLibrary[i]);
+    }
+})
