@@ -34,6 +34,30 @@ addBookBtn.addEventListener("click", () => {
     myLibrary.push(newBook);
 
     for (let i = 0; i < myLibrary.length; i++) {
-        console.log(myLibrary[i]);
+        createBookCard(newBook.title, newBook.author, newBook.numOfPages);
     }
+
+
 })
+
+const createBookCard = (title, author, pageCount) => {
+    const bookCardTitle = document.createElement("h2");
+    bookCardTitle.classList.add("bookCardTitle");
+    bookCardTitle.textContent = title;
+
+    const bookCardAuthor = document.createElement("p");
+    bookCardAuthor.classList.add("bookCardAuthor");
+    bookCardAuthor.textContent = `Author: ${author}`;
+
+    const bookCardPageCount = document.createElement("p");
+    bookCardPageCount.classList.add("bookCardPageCount");
+    bookCardPageCount.textContent = `Pages: ${pageCount}`;
+
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("bookCard");
+    bookCard.appendChild(bookCardTitle);
+    bookCard.appendChild(bookCardAuthor);
+    bookCard.appendChild(bookCardPageCount);
+
+    library.appendChild(bookCard);
+};
